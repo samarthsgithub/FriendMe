@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../styles/feed.css";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Feed() {
   const [tweets, setTweets] = useState([]);
@@ -9,7 +10,7 @@ function Feed() {
     const fetchTweets = async () => {
         const token =  localStorage.getItem('token');
       try {
-        const response = await axios.get('http://localhost:8000/tweets/feed', {
+        const response = await axios.get(`${API_URL}/tweets/feed`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
