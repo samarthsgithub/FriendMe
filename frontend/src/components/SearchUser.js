@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/searchUser.css';
+const API_URL = process.env.REACT_APP_API_URL;
 
 function SearchUser() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -11,7 +12,7 @@ function SearchUser() {
         e.preventDefault();
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get(`http://localhost:8000/users/search?username=${searchTerm}`, {
+            const response = await axios.get(`${API_URL}/users/search?username=${searchTerm}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -30,7 +31,7 @@ function SearchUser() {
     const sendFriendRequest = async (userId) => {
         const token = localStorage.getItem('token');
         try {
-            await axios.post(`http://localhost:8000/users/send-request/${userId}`, {}, {
+            await axios.post(`${API_URL}/users/send-request/${userId}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -73,5 +74,7 @@ function SearchUser() {
 }
 
 export default SearchUser;
+
+
 
 
