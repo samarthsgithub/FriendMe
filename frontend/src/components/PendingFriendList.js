@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import{useState,useEffect} from "react";
 import '../styles/pendingFriend.css';
+const API_URL = process.env.REACT_APP_API_URL;
 
 function PendingFriendList({ friendRequest, onRequestHandled }) {
 
@@ -15,7 +16,7 @@ function PendingFriendList({ friendRequest, onRequestHandled }) {
         try {
             const token = localStorage.getItem('token');
             await axios.post(
-                `http://localhost:8000/users/accept-request/${requestId}`, {}, {
+                `${API_URL}/users/accept-request/${requestId}`, {}, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -31,7 +32,7 @@ function PendingFriendList({ friendRequest, onRequestHandled }) {
         try {
             const token = localStorage.getItem('token');
             await axios.post(
-                `http://localhost:8000/users/reject-request/${requestId}`, {}, {
+                `${API_URL}/users/reject-request/${requestId}`, {}, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
