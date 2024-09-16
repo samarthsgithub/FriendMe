@@ -1,0 +1,262 @@
+/* Ensure that body and html take the full height and have no margin */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #4a90e2;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
+    height: 60px; /* Set a height for the navbar */
+  }
+  
+  .navbar h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .navbar-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navbar-buttons button {
+    margin-left: 10px;
+    background-color: white;
+    color: #4a90e2;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .navbar-buttons button:hover {
+    background-color: #e0e0e0;
+  }
+  
+ 
+ /* Profile popup styling */
+.profile-popup {
+    position: absolute;
+    right: 20px;
+    top: 70px; /* Adjust this if necessary */
+    background-color: #ffffff;
+    color:#333;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block; /* Ensure it is displayed */
+    z-index: 1000;
+    width:250px;
+  }
+  .profile-popup p{
+    margin:0 0 10px;
+  }
+  .profile-popup strong{
+    color:#4a90e2;
+  }
+  
+  
+  
+  /* Search Bar styling */
+  .search-bar {
+    margin-top: 60px; /* Adjust based on navbar height */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-user {
+    position: relative;
+    width: 100%;
+  }
+  
+  .search-user input {
+    width: 300px; /* Width of the search input */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-user button {
+    padding: 10px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .search-user button:hover {
+    background-color: #357ABD;
+  }
+  
+  .search-results {
+    position: absolute;
+    top: 100%; /* Position below the search input */
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .search-results ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .search-results li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-results li button {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .search-results li button:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Container for the main sections */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 20px;
+    padding: 80px 20px 20px; /* Adjust padding-top to match navbar height */
+    margin-top: 0; /* Ensure there's no top margin */
+  }
+  
+  /* Section styling */
+  .aside-section, .feed-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feed-section {
+    min-height: 400px; /* Ensure the feed section takes up enough space */
+  }
+  
+  .aside-section {
+    min-height: 400px;
+  }
+  
+  .right-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the two sections are evenly distributed */
+    height: 100%; /* Make the right section fill the available space */
+  }
+  
+  .friends-list, .recommend-friends {
+    flex: 1; /* Make both sections take up equal space */
+    padding: 10px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Add some space between the two sections */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .friends-list {
+    margin-bottom: 20px; /* Space between friends list and recommendations */
+  }
+  
+  .recommend-friends {
+    margin-top: 20px;
+  }
+  
+  /* Loading and no user styles */
+  .loading, .no-user {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Tweet input styling */
+.add-tweet-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-tweet-section button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-tweet-section button:hover {
+    background-color: #357ABD;
+  }
+  
+  .tweet-input-container {
+    margin-top: 10px;
+  }
+  
+  .tweet-input-container textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .tweet-input-container button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tweet-input-container button:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Flash message styling */
+  .flash-message {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  

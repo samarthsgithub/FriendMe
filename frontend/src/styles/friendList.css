@@ -1,0 +1,15 @@
+.friend-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.friend-list li {
+    padding: 0.5rem 1rem;
+    background-color: #eee;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.friend-list p {
+    color: #666;
+}

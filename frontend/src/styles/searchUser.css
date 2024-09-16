@@ -1,0 +1,78 @@
+/* searchUser.css */
+
+.search-user-container {
+    margin-top:2rem;
+    position: fixed;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #357ABD;
+}
+
+.cancel-button {
+    padding: 10px;
+    background-color: #e94e77;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: #c13d57;
+}
+
+.search-results-container {
+    margin-top: 10px;
+}
+
+.search-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-result-item .username {
+    font-weight: bold;
+}
+
+.send-request-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.send-request-button:hover {
+    background-color: #357ABD;
+}

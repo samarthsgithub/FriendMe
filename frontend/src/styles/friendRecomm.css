@@ -1,0 +1,15 @@
+.friend-recomm ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.friend-recomm li {
+    padding: 0.5rem 1rem;
+    background-color: #eee;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.friend-recomm p {
+    color: #666;
+}
