@@ -7,8 +7,9 @@ import PendingFriendList from "../components/PendingFriendList";
 import SearchUser from "../components/SearchUser";
 import Feed from "../components/Feed";
 import { useNavigate } from 'react-router-dom';
-const API_URL = process.env.REACT_APP_API_URL;
 import "../styles/home.css"; // Ensure this is the correct path to your CSS
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Home() {
   const { user, setUser } = useContext(UserContext);
