@@ -3,6 +3,7 @@ import React, { useState,useContext,useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 import axios from 'axios'; // Import axios
 import { UserContext } from "../context/UserContext";
+const API_URL = process.env.REACT_APP_API_URL;
 import '../styles/Auth.css'; // Importing the CSS file for styling
 
 const Signin = () => {
@@ -29,7 +30,7 @@ const Signin = () => {
 
     try {
       // Send a POST request to the backend
-      const response = await axios.post('http://localhost:8000/users/signin', { username, password });
+      const response = await axios.post(`${API_URL}/users/signin`, { username, password });
 
       // Handle success
       setSuccess('Signin successful');
