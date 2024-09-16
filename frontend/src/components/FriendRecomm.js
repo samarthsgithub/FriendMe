@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/friendRecomm.css'
+const API_URL = process.env.REACT_APP_API_URL;
 
 function FriendRecomm() {
     const [recommendations, setRecommendations] = useState([]);
@@ -9,7 +10,7 @@ function FriendRecomm() {
         const fetchRecommendations = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:8000/users/recommend-friends', {
+                const response = await axios.get(`${API_URL}/users/recommend-friends`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
