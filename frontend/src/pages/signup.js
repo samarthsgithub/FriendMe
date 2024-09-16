@@ -3,8 +3,8 @@ import React, { useState,useContext,useEffect} from 'react';
 import axios from 'axios'; // Import axios
 import {useNavigate} from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-const API_URL = process.env.REACT_APP_API_URL;
 import '../styles/Auth.css'; // Importing the CSS file for styling
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Signup = () => {
   const { user, setUser } = useContext(UserContext);
