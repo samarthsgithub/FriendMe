@@ -9,7 +9,9 @@ const app = express();
 const port = 8000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:'https://friend-me-henna.vercel.app'
+}));
 
 connectDB();
 
