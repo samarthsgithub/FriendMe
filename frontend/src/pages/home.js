@@ -7,6 +7,7 @@ import PendingFriendList from "../components/PendingFriendList";
 import SearchUser from "../components/SearchUser";
 import Feed from "../components/Feed";
 import { useNavigate } from 'react-router-dom';
+const API_URL = process.env.REACT_APP_API_URL;
 import "../styles/home.css"; // Ensure this is the correct path to your CSS
 
 function Home() {
@@ -23,7 +24,7 @@ function Home() {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get("http://localhost:8000/users/me", {
+          const response = await axios.get(`${API_URL}/users/me`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
@@ -50,7 +51,7 @@ function Home() {
   const handleTweet = async () => {
     const token = localStorage.getItem('token');
     try {
-      await axios.post("http://localhost:8000/tweets/post-tweet", { content: tweetText }, {
+      await axios.post(`${API_URL}/tweets/post-tweet`, { content: tweetText }, {
         headers: {
           Authorization: `Bearer ${token}`
         }
