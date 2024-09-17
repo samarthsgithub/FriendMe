@@ -1,10 +1,10 @@
 // src/pages/Signin.js
-import React, { useState,useContext,useEffect} from 'react';
-import {useNavigate} from "react-router-dom";
+import React, { useState, useContext, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios'; // Import axios
 import { UserContext } from "../context/UserContext";
-import '../styles/Auth.css'; // Importing the CSS file for styling
 
+import '../styles/Auth.css'; // Importing the CSS file for styling
 const API_URL = process.env.REACT_APP_API_URL;
 
 const Signin = () => {
@@ -15,16 +15,15 @@ const Signin = () => {
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
-
-  useEffect(()=>{
-    const checkLoggedIn = ()=>{
-        const token = localStorage.getItem('token');
-        if(token){
-            navigate('/home')
-        }
+  useEffect(() => {
+    const checkLoggedIn = () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        navigate('/home');
+      }
     };
     checkLoggedIn();
-  },[navigate]);
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,19 +38,20 @@ const Signin = () => {
       setPassword('');
 
       // Store JWT token in localStorage
-      if(response.status===200){
+      if (response.status === 200) {
         setUser(response.data);
-      localStorage.setItem('token', response.data.token);
-      navigate('/home');
-      } // Assuming the backend returns a token
-
-      // Optionally, update user context if your backend returns user data
-      // updateUser(response.data.user); // Assuming the backend returns user data
+        localStorage.setItem('token', response.data.token);
+        navigate('/home');
+      }
 
     } catch (error) {
       // Handle error
       setError(error.response?.data?.message || 'An error occurred');
     }
+  };
+
+  const handleSignupRedirect = () => {
+    navigate('/signup');
   };
 
   return (
@@ -78,6 +78,12 @@ const Signin = () => {
         {error && <p className="error-message">{error}</p>}
         {success && <p className="success-message">{success}</p>}
       </form>
+
+      {/* Signup Redirect */}
+      <div className="redirect-container">
+        <p>Don't have an account?</p>
+        <button onClick={handleSignupRedirect} className="signup-button">Sign Up</button>
+      </div>
     </div>
   );
 };
